@@ -1,0 +1,83 @@
+{
+	"textures": [
+		{
+			"image": "Plataformas.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 96,
+				"h": 32
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "Plataforma 1.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 32
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Plataforma 2.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 32
+					},
+					"frame": {
+						"x": 32,
+						"y": 0,
+						"w": 32,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Plataforma 3.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 32
+					},
+					"frame": {
+						"x": 64,
+						"y": 0,
+						"w": 32,
+						"h": 32
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:9bb0c37b2dd6102821c8603ee91301fb:e0b6f9c444d3804702b5c9230a1179cb:96af3448b41418e7547ff799bb965284$"
+	}
+}
