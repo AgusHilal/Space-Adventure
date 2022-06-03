@@ -10,12 +10,23 @@ export class Preloads extends Phaser.Scene {
 
   preload() {
     this.load.image("logo_de_juego", "public/assets/images/phaser_logo.png");
-    this.load.image("fondo_menu","public/assets/images/main_menu_background.png");
-    this.load.image("dude","public/assets/images/dude.png")
-    this.load.image("bomb","public/assets/images/bomb.png")
-    this.load.image("moon","public/assets/images/moon.png")
-    this.load.image("star","public/assets/images/star.png")
-    this.load.image("derrota","public/assets/images/derrota.png")
+    this.load.image(
+      "fondo_menu",
+      "public/assets/images/main_menu_background.png"
+    );
+
+    // El personaje es un spritesheet, de la cual luego se crea una animacion.
+    // No se importa como imagen
+    //this.load.image("dude","public/assets/images/dude.png")
+    this.load.spritesheet("dude", "public/assets/images/dude.png", {
+      frameWidth: 32,
+      frameHeight: 48,
+    });
+
+    this.load.image("bomb", "public/assets/images/bomb.png");
+    this.load.image("moon", "public/assets/images/moon.png");
+    this.load.image("star", "public/assets/images/star.png");
+    this.load.image("derrota", "public/assets/images/derrota.png");
   }
 
   create() {
@@ -39,7 +50,7 @@ export class Preloads extends Phaser.Scene {
       frameRate: 10,
       repeat: -1,
     });
-        // Pasa directamente a la escena del menú principal
+    // Pasa directamente a la escena del menú principal
     this.scene.start("MainMenu");
   }
 }

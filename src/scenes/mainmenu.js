@@ -11,20 +11,17 @@ export class MainMenu extends Phaser.Scene {
   create() {
     // Fondo del menú principal
     this.add
-      .image(
-        this.cameras.main.centerX,
-        this.cameras.main.centerY,
-        "fondo_menu"
-      )
+      .image(this.cameras.main.centerX, this.cameras.main.centerY, "fondo_menu")
       .setScale(1.1);
 
     // Logo de Phaser
-    this.add.image(
-      this.cameras.main.centerX,
-      this.cameras.main.centerY / 1.5,
-      "logo_de_juego"
-    )
-    .setScale(1.1);
+    this.add
+      .image(
+        this.cameras.main.centerX,
+        this.cameras.main.centerY / 1.5,
+        "logo_de_juego"
+      )
+      .setScale(1.1);
 
     // botón
     const boton = new Button(
