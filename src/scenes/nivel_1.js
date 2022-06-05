@@ -6,10 +6,18 @@ var cursors;
 var score;
 var gameOver;
 var scoreText;
+var scoreTime;
+var scoreTimeText;
+var timedEvent;
 
 export class nivel_1 extends Phaser.Scene {
   constructor() {
     super("nivel_1");
+  }
+  
+  init(data) {
+    score = data.score;
+    scoreTime = data.scoreTime;
   }
 
   preload() {
@@ -21,7 +29,33 @@ export class nivel_1 extends Phaser.Scene {
     );
   }
 
+  onSecond() {
+    if (! gameOver)
+    {
+        scoreTime = scoreTime - 1; // One second
+        scoreTimeText.setText('Time: ' + scoreTime);
+        if (scoreTime == 0) {
+            timedEvent.paused = true;
+            this.scene.start(
+              "Retry",
+              { score: score } // se pasa el puntaje como dato a la escena RETRY
+            );
+        }
+    }
+  }
+
   create() {
+    
+    score = 0
+    scoreTime = 120
+    
+    timedEvent = this.time.addEvent({ 
+      delay: 1000, 
+      callback: this.onSecond, 
+      callbackScope: this, 
+      loop: true 
+    });
+
     const map = this.make.tilemap({ key: "map" });
 
     // Parameters are the
@@ -91,7 +125,12 @@ export class nivel_1 extends Phaser.Scene {
       }
     });
 
-    scoreText = this.add.text(30, 6, "score: 0", {
+    scoreText = this.add.text(30, 6, "Score: 0", {
+      fontSize: "32px",
+      fill: "#FFFFFF",
+    });
+
+    scoreTimeText = this.add.text(630, 6, "Time: ", + scoreTime, {
       fontSize: "32px",
       fill: "#FFFFFF",
     });
@@ -111,12 +150,14 @@ export class nivel_1 extends Phaser.Scene {
     this.physics.add.collider(player, bombs, this.hitBomb, null, this);
 
     gameOver = false;
-    score = 0;
   }
   update() {
+    
     if (moons.countActive(true) === 0 && stars.countActive(true) === 0) {
-      this.scene.start("nivel_2", { score: score });
+     this.scene.start("nivel_2", { score: score, scoreTime : scoreTime });
     }
+
+
     if (gameOver) {
       return;
     }
@@ -159,7 +200,7 @@ export class nivel_1 extends Phaser.Scene {
     gameOver = true;
 
     setTimeout(() => {
-      this.scene.start("Retry", { score: score });
+      this.scene.start("retry", { score: score });
     }, 1000);
   }
 }
