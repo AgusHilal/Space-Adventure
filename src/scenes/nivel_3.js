@@ -45,7 +45,7 @@ export class nivel_3 extends Phaser.Scene {
     }
 
     create() {
-
+      
       timedEvent = this.time.addEvent({ 
         delay: 1000, 
         callback: this.onSecond, 
@@ -142,9 +142,9 @@ export class nivel_3 extends Phaser.Scene {
     }
 
     update() {
-        //if ( == 15score5) {
-        //  this.scene.start("nivel_3", { score: score });
-        //}
+        if ( score == 250) {
+          this.scene.start("win", { score: score, scoreTime : scoreTime });
+        }
         if (gameOver) {
 
             return;

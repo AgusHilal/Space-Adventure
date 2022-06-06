@@ -27,6 +27,7 @@ export class Preloads extends Phaser.Scene {
     this.load.image("moon", "public/assets/images/moon.png");
     this.load.image("star", "public/assets/images/star.png");
     this.load.image("derrota", "public/assets/images/derrota.png");
+    this.load.image("win", "public/assets/images/win.png");
   }
   
   create() {

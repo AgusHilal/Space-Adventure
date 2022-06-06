@@ -4,6 +4,7 @@ import { nivel_1} from "../scenes/nivel_1.js";
 import { nivel_2} from "../scenes/nivel_2.js";
 import { nivel_3} from "../scenes/nivel_3.js";
 import { retry } from "../scenes/retry.js";
+import { win } from "../scenes/win.js";
 
 
 var config = {
@@ -31,7 +32,7 @@ var config = {
   },
   // Listado de todas las escenas del juego, en orden
   // La primera escena es con la cual empieza el juego
-  scene: [Preloads, MainMenu, nivel_1, nivel_2, nivel_3, retry],
+  scene: [Preloads, MainMenu, nivel_1, nivel_2, nivel_3, retry, win],
 };
 
 var game = new Phaser.Game(config);

@@ -9,7 +9,7 @@ export class retry extends Phaser.Scene {
   }
   create() {
     this.add
-      .image(this.cameras.main.centerX, this.cameras.main.centerY, "Fondo_Over")
+      .image(this.cameras.main.centerX, this.cameras.main.centerY, "fondo_menu")
       .setScale(1.1);
 
     this.add

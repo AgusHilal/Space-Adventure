@@ -1,36 +1,40 @@
-//Importar el botón
 import Button from "../js/button.js";
-
-// Clase MainMenu, donde se crean los botones, el logo y el fondo del menú principal
-export class MainMenu extends Phaser.Scene {
+var score;
+export class win extends Phaser.Scene {
   constructor() {
-    // Se asigna una key para despues poder llamar a la escena
-    super("MainMenu");
+    super("win");
   }
-
+  init(data) {
+    score = data.score;
+  }
   create() {
-    // Fondo del menú principal
     this.add
       .image(this.cameras.main.centerX, this.cameras.main.centerY, "fondo_menu")
       .setScale(1.1);
 
-    // Logo de Phaser
     this.add
       .image(
         this.cameras.main.centerX,
         this.cameras.main.centerY / 1.5,
-        "logo_de_juego"
+        "win"
       )
       .setScale(1.1);
 
-    // botón
+    this.add
+      .text(
+        this.cameras.main.centerX,
+        this.cameras.main.centerY,
+        `Puntaje alcanzado: ${score}`
+      )
+      .setOrigin(0.5);
+
     const boton = new Button(
       this.cameras.main.centerX,
       this.cameras.main.centerY + this.cameras.main.centerY / 3,
-      "Jugar",
+      "Volver a jugar",
       this,
       () => {
-        this.scene.start("nivel_3");
+        this.scene.start("MainMenu");
       }
     );
   }
