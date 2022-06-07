@@ -30,7 +30,7 @@ export class MainMenu extends Phaser.Scene {
       "Jugar",
       this,
       () => {
-        this.scene.start("nivel_3");
+        this.scene.start("nivel_1");
       }
     );
   }
