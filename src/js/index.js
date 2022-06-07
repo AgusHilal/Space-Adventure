@@ -4,7 +4,7 @@ import { nivel_1} from "../scenes/nivel_1.js";
 import { nivel_2} from "../scenes/nivel_2.js";
 import { nivel_3} from "../scenes/nivel_3.js";
 import { retry } from "../scenes/retry.js";
-import { win } from "../scenes/win.js";
+import { win } from "../scenes/Win.js";
 
 
 var config = {
